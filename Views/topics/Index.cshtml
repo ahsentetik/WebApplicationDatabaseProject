@@ -1,0 +1,196 @@
+﻿@model IEnumerable<WebApplicationDatabaseProject.topics>
+
+@{
+    ViewBag.Title = "Table";
+}
+
+<style>
+    /* CSS styling for the heading */
+    h2 {
+        color: #333;
+        background-color: #ecf0f1; /* Light grey background */
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+</style>
+
+
+<h2>Topics Table</h2>
+
+<style>
+    .create-new-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+        .create-new-link:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "create-new-link" })
+</p>
+
+<style>
+    .search-form {
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+    }
+
+    .search-label {
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .search-input {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .search-button {
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+</style>
+
+
+@using (Html.BeginForm("Index", "topics", FormMethod.Get, new { @class = "search-form" }))
+{
+    <p>
+        <label for="searchString" class="search-label">Search:</label>
+        @Html.TextBox("searchString", null, new { @class = "search-input" })
+        <input type="submit" value="Search" class="search-button" />
+    </p>
+}
+
+
+<style>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #f2f2f2;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .table td:last-child {
+            text-align: center;
+        }
+
+        .table a {
+            text-decoration: none;
+            color: #007BFF;
+            margin: 0 5px;
+        }
+
+            .table a:hover {
+                color: #0056b3;
+            }
+</style>
+
+
+<style>
+    /* Style for the table */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #4CAF50; /* Green */
+        color: #fff;
+    }
+
+    /* Style for alternating rows */
+    tr:nth-child(even) {
+        background-color: #f2f2f2; /* Light grey */
+    }
+
+    /* Style for the action links */
+    .edit-link {
+        background-color: #3498db; /* Blue */
+        color: #fff;
+    }
+
+    .details-link {
+        background-color: #e67e22; /* Orange */
+        color: #fff;
+    }
+
+    .delete-link {
+        background-color: #e74c3c; /* Red */
+        color: #fff;
+    }
+
+    .action-links {
+        text-decoration: none;
+        padding: 8px 12px;
+        margin-right: 5px;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+        .action-links:hover {
+            border-color: #333;
+        }
+</style>
+
+<table>
+    <tr>
+        <th>Topic Name</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.topic_name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.topic_id }, new { @class = "edit-link action-links" }) 
+                @Html.ActionLink("Details", "Details", new { id = item.topic_id }, new { @class = "details-link action-links" }) 
+                @Html.ActionLink("Delete", "Delete", new { id = item.topic_id }, new { @class = "delete-link action-links" })
+            </td>
+        </tr>
+    }
+</table>

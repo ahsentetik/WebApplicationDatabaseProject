@@ -1,0 +1,61 @@
+﻿@model WebApplicationDatabaseProject.university
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+    .details-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff; /* Arka plan rengi */
+        border: 1px solid #ddd; /* Kenarlık rengi */
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Gölge efekti */
+    }
+
+    .edit-link,
+    .back-to-list-link {
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: #007bff; /* Mavi renk */
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .back-to-list-link {
+        background-color: #e74c3c; /* Gri renk */
+    }
+
+        .edit-link:hover,
+        .back-to-list-link:hover {
+            background-color: #0056b3; /* Hover durumunda daha koyu mavi */
+        }
+</style>
+
+<div class="details-container">
+    <h2>University Details</h2>
+
+    <div>
+        <h4>University</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.university_name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.university_name)
+            </dd>
+        </dl>
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.university_id }, new { @class = "edit-link" }) |
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "back-to-list-link" })
+    </p>
+</div>

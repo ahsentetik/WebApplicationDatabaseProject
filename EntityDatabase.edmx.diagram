@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ec46aa2bccd3429099648262ad8ae74a" Name="Diagram1">
+        <EntityTypeShape EntityType="ThesisModel.author" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThesisModel.institute" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThesisModel.keyword" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThesisModel.language" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThesisModel.supervisors" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThesisModel.thesis" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThesisModel.topics" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThesisModel.university" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="ThesisModel.FK__thesis__author_i__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="ThesisModel.FK__institute__unive__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="ThesisModel.FK__thesis__institut__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="ThesisModel.FK__thesis__language__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="ThesisModel.FK__thesis__supervis__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="ThesisModel.FK__thesis__topic_id__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="ThesisModel.FK__thesis__universi__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="ThesisModel.thesis_keyword" ManuallyRouted="false" />
+        <AssociationConnector Association="ThesisModel.thesis_supervisor" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
